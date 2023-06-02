@@ -1,0 +1,4 @@
+*
+!.gitignore
+!petal.json
+!petal.freeze
