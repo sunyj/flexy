@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flexy"
+version = "0.1.0"
+dependencies = [
+  "revo",
+  "pyyaml",
+]
+authors = [
+  { name="Sun Yijiang", email="sunyijiang@gmail.com" },
+]
+description = "Flexible YAML loader."
+readme = "README.md"
+requires-python = ">=3.4"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/sunyj/flexy"
+"Bug Tracker" = "https://github.com/sunyj/flexy/issues"
