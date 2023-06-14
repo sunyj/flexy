@@ -38,3 +38,24 @@ YAML parser.
 
 Flexy supports variable substitution with the great power of
 [revo](https://github.com/sunyj/revo) ([PyPI](https://pypi.org/project/revo/)).
+
+## Emacs `yaml-mode` hacks
+
+Sample configs: [`contrib/yaml-mode-hack.el`](contrib/yaml-mode-hack.el)
+
+```elisp
+(require 'yaml-mode)
+
+(defun yaml-extra-highlights ()
+  (font-lock-add-keywords 'yaml-mode
+   '(;; included files
+     ("^\\s-*\\(#\\s-*include\\)\\s-+\\(<[^>]*>\\)"
+      (1 font-lock-preprocessor-face prepend)
+      (2 font-lock-doc-face prepend))
+     ;; variable dollar sign
+     ("\\(\\$\\)(" 1 font-lock-keyword-face prepend)
+     ;; variable name
+     ("\\$(\\([^)$]+\\))" 1 font-lock-function-name-face prepend))))
+
+(add-hook 'yaml-mode-hook 'yaml-extra-highlights)
+```

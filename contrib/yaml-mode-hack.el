@@ -1,3 +1,5 @@
+;;; Support highlights on variable references and file inclusions
+
 (require 'yaml-mode)
 
 (defun yaml-extra-highlights ()
