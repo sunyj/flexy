@@ -10,7 +10,7 @@ def load(yaml_file, overrides=None):
     return revo.Revo(yaml.safe_load(content), overrides).val.copy()
 
 
-def expand_includes(fname, spec=r'^#\s*include\s+<(.+)>$'):
+def expand_includes(fname, spec=r'^ *#\s*include\s+<(.+)>$'):
     lines = []
     path = Path(fname).expanduser()
     with open(path) as f:
